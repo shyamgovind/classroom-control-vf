@@ -43,4 +43,10 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+
+file { '/etc/motd':
+   ensure => file,
+   content => "Today I learned what it means to manage state using Puppet. - From Shyam. \n",
+}
+
 }
