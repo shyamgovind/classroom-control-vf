@@ -46,6 +46,6 @@ node default {
   
   file { "/etc/motd" :
     ensure => file,
-    content => "Hello again, Steve",
+    content => "This is the update with correct login.",
     }
 }
