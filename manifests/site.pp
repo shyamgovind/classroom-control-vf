@@ -44,9 +44,8 @@ node default {
   #   class { 'my_class': }
   include role::classroom
 
-file { 'Modifying /etc/motd':
-  path => "/etc/motd",
-  ensure => file,
-  content => "Today I learned about the basics of Puppet. \n",
+exec { 'Create /etc/motd via exec':
+  command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+  creates => '/etc/motd',
   }
 }
