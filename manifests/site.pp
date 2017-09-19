@@ -45,8 +45,8 @@ node default {
   include role::classroom
 
 file { 'Modifying /etc/motd':
-  path = "/etc/motd"
+  path => "/etc/motd",
   ensure => file,
-  content => "Today I learned about the basics of Puppet. \n"
+  content => "Today I learned about the basics of Puppet. \n",
   }
 }
