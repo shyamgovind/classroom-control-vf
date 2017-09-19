@@ -51,4 +51,9 @@ node default {
     mode => '0644',
     content => "today I learned how to change state with Puppet.\n"
   }
+  
+  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+    path => '/usr/bin:/usr/local/bin',
+    creates => '/etc/motd', 
+  }
 }
