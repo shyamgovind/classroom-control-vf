@@ -20,5 +20,5 @@ class memcached {
     subscribe => File[$file_path],
   }
   
-  notify { "os family is ${facts['os']['family'}": }
+  notify { "os family is ${facts['os']['family']}": }
 }
