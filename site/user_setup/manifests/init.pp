@@ -1,6 +1,8 @@
-Create user_setup}
+Class user_setup {
 
-user { 'fundamentals': ensure => present,
+user { 'fundamentals': 
+  ensure => present,
 }
+
 
 }
