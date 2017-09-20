@@ -36,6 +36,7 @@ package { 'nginx':
  ensure => running,
  enable => true,
  require => [File['/etc/nginx/conf.d/default.conf'], File['/etc/nginx/nginx.conf']],
+ subscribe => [ File['/etc/nginx/nginx.conf'],File['/etc/nginx/conf.d/default.conf']],
  }
  
  }
