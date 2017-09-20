@@ -46,6 +46,8 @@ node default {
   
   include users
   
+  include skeleton
+  
 #  file { '/etc/motd': 
 #    ensure => file,
 #    owner => 'root',
