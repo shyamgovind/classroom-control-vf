@@ -1,4 +1,5 @@
 class nginx 
+{
 
 # Package Installation
 package { 'nginx':
