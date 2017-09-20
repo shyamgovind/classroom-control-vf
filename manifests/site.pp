@@ -44,7 +44,8 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   
-  include users
+  # removing users because the PE classifier includes it now
+  #include users
   
   include skeleton
   
