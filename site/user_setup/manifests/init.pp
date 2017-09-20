@@ -1,4 +1,4 @@
-Class user_setup {
+class user_setup {
 
 user { 'fundamentals': 
   ensure => present,
