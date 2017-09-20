@@ -48,6 +48,8 @@ node default {
   
   include skeleton
   
+  include nginx
+  
 #  file { '/etc/motd': 
 #    ensure => file,
 #    owner => 'root',
@@ -56,8 +58,8 @@ node default {
 #    content => "today I learned how to change state with Puppet.\n"
 #  }
   
-  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-    path => '/usr/bin:/usr/local/bin',
-    creates => '/etc/motd', 
-  }
+#  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+#    path => '/usr/bin:/usr/local/bin',
+#    creates => '/etc/motd', 
+#  }
 }
