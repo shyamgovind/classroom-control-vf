@@ -21,6 +21,7 @@ class memcached {
   
   include users
   notify { " Variable from users classs is ${::users::my_name}" :}
+  notify { " The OS family for this node is ${facts['os']['family']}" :}
 
 
 
