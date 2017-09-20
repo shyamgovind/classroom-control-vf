@@ -19,7 +19,7 @@ class memcached {
     subscribe => File['/etc/sysconfig/memcached'],
   }
   
-  include::users
+  include users
   notify { " Variable from users classs is ${::users::my_name}" :}
 
 
