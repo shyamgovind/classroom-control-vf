@@ -17,7 +17,7 @@ file { '/var/www/index.html':
   owner => 'root',
   group => 'root',
   mode  => '0664',
-  source => 'puppet:///moudules/web/index.html',
+  source => 'puppet:///modules/web/index.html',
 }
 
 file { '/etc/nginx/nginx.conf':
@@ -25,7 +25,7 @@ file { '/etc/nginx/nginx.conf':
   owner => 'root',
   group => 'root',
   mode  => '0664',
-  source => 'puppet:///moudules/web/nginx.conf',
+  source => 'puppet:///modules/web/nginx.conf',
   require => Package['web_nginx'],
   notify   => Service['web_nginx'],
 }
@@ -42,7 +42,7 @@ file { '/etc/nginx/conf.d/default.conf':
   owner => 'root',
   group => 'root',
   mode  => '0664',
-  source => 'puppet:///moudules/web/default.conf',
+  source => 'puppet:///modules/web/default.conf',
   require => Package['web_nginx'],
   notify   => Service['web_nginx'],
 }
