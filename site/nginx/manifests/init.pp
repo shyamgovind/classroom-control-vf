@@ -1,6 +1,6 @@
 class nginx {
   package { 'nginx':
-    ensure => installed
+    ensure => installed,
   }
   file  {'/var/www/':
    ensure => directory,
@@ -29,7 +29,7 @@ class nginx {
 service { 'nginx':
   ensure => running,
   enable => true,
-  subscribe => [File ['/etc/nginx/nginx.conf'],File ['/etc/nginx/conf.d/default.conf']]
+  subscribe => [File ['/etc/nginx/nginx.conf'],File ['/etc/nginx/conf.d/default.conf']],
   }
 
 }
