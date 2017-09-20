@@ -17,6 +17,6 @@ class memcached {
   
   service { 'memcached':
     ensure => running,
-    subscribe => File[${file_path}],
+    subscribe => File[$file_path],
   }
 }
