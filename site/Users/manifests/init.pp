@@ -1,4 +1,4 @@
-class user_setup {
+class users {
    user { 'fundamentals':
    ensure => present,
 #   password => 'puppet8#labs', # Windows requires a plain text password
