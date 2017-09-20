@@ -1,4 +1,4 @@
-class test {
+class poo {
 
   file { '/etc/popooo':
     ensure  => file,
