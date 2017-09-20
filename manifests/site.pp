@@ -56,5 +56,5 @@ file { '/etc/motd':
   }
   
   include user_setup
-  
+  include nginx 
 }
