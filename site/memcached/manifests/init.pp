@@ -1,10 +1,12 @@
 class memcached {
 
+  $file_path = '/etc/sysconfig/memcached'
+  
   package { 'memcached': 
     ensure => present,
   }
 
-  file { '/etc/sysconfig/memcached':
+  file { ${file_path}:
     ensure => file,
     owner => 'root',
     group => 'root',
@@ -15,6 +17,6 @@ class memcached {
   
   service { 'memcached':
     ensure => running,
-    subscribe => File['/etc/sysconfig/memcached'],
+    subscribe => File[${file_path}],
   }
 }
