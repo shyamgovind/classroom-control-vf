@@ -12,4 +12,6 @@ class skeleton {
     ownser => 'root',
     group  => 'root',
     source => 'puppet:///modules/skeleton/bashrc',
+  }
+  
 }
