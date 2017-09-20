@@ -10,3 +10,4 @@ fi
 
 # User specific aliases and functions
 echo this is the bashrc dude
+export PATH=$PATH:/usr/local/bin
