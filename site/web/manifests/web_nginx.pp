@@ -52,3 +52,4 @@ service {'nginx':
   enable => true,
 }
 
+}
