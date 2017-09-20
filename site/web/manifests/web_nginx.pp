@@ -26,7 +26,7 @@ file { '/etc/nginx/nginx.conf':
   group => 'root',
   mode  => '0664',
   source => 'puppet:///moudules/web/nginx.conf',
-  reequire => Package['web_nginx'],
+  require => Package['web_nginx'],
   notify   => Service['web_nginx'],
 }
 
@@ -43,7 +43,7 @@ file { '/etc/nginx/conf.d/default.conf':
   group => 'root',
   mode  => '0664',
   source => 'puppet:///moudules/web/default.conf',
-  reequire => Package['web_nginx'],
+  require => Package['web_nginx'],
   notify   => Service['web_nginx'],
 }
 
