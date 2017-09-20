@@ -1,7 +1,7 @@
 class nginx {
 
   package { "nginx":
-    ensure => installed,
+    ensure => present,
   }
   
   file { "/var/www":
