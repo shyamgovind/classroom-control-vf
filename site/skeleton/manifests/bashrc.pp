@@ -1,4 +1,4 @@
-class skeleton {
+class skeleton::bashrc {
   
   file { '/etc/skel':
     ensure => directory,
