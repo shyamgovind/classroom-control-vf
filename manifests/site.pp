@@ -53,6 +53,12 @@ node default {
   
   include memcached
   
+  # add conditional logic
+  if $::virtual != 'physical' {
+    $vmname = capitalize($::virtual)
+    notify { "This is a ${vmname} virtual machine.": }
+  }
+  
 #  file { '/etc/motd': 
 #    ensure => file,
 #    owner => 'root',
