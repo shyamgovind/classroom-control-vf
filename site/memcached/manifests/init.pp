@@ -19,4 +19,6 @@ class memcached {
     ensure => running,
     subscribe => File[$file_path],
   }
+  
+  notify { "os family is ${facts['os']['family'}": }
 }
