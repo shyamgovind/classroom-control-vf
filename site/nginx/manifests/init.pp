@@ -3,9 +3,6 @@ class nginx {
     ensure => present,
   }
   
-  service { 'nginx':
-  }
-  
   file { '/var/www':
     ensure => directory,
     owner => 'root',
