@@ -6,7 +6,7 @@ class memcached {
     ensure => present,
   }
 
-  file { ${file_path} :
+  file { $file_path :
     ensure => file,
     owner => 'root',
     group => 'root',
