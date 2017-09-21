@@ -1,4 +1,6 @@
-class nginx {
+class nginx (
+$doc_root = "/var/www",
+){
 
 # Package installation
 package { "nginx" :
@@ -6,11 +8,11 @@ package { "nginx" :
   }
 
 # Creating a web page and copying to right location.
-file { "/var/www/" :
+file { $doc_root :
   ensure => directory,
   }
   
- file { "/var/www/index.html" :
+ file { "${doc_root}/index.html" :
   ensure => file,
   source => "puppet:///modules/nginx/index.html",
 }
