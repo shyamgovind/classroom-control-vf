@@ -50,7 +50,10 @@ node default {
   include skeleton
   
   # classify in console
-  #include nginx 
+  #include nginx
+  class { "nginx":
+    $root => '/var/www/html',
+  }
   
   include memcached
 
