@@ -4,6 +4,6 @@ class motd {
 
   file { '/etc/motd':
     ensure => file,
-    content => epp('puppet:///modules/motd/motd/warning.epp', { message => $content })
+    content => epp('motd/warning.epp', { message => $content })
   }
 }
