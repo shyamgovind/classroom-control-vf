@@ -1,5 +1,5 @@
 class nginx (
-  $root = ${::nginx::params::root},
+  $root = "${::nginx::params::root}",
 ) inherits nginx::params {
 
 #  $sourcedir = 'puppet:///modules/nginx'
