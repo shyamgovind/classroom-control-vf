@@ -20,7 +20,7 @@ file { '/var/www/index.html':
   group => 'root',
   mode  => '0664',
   #source => 'puppet:///modules/web/index.html',
-  content =>
+  content => $source,
 }
 
 file { '/etc/nginx/nginx.conf':
