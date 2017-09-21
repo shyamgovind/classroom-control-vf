@@ -1,32 +1,36 @@
-class nginx {
+class nginx (
+  $root = '/var/www',
+) {
+
+  $sourcedir = 'puppet:///modules/nginx'
   File {
     owner => 'root',
     group => 'root',
-    mode => '0664',    
-  }    
+    mode => '0664',
+  }
 
   package { 'nginx':
     ensure => present,
   }
   
-  file { '/var/www':
+  file { $root:
     ensure => directory,
     mode => '0775',
   }
 
-  file { '/var/www/index.html':
+  file { "${root}/index.html':
     ensure => file,
-    source => 'puppet:///modules/nginx/index.html',
+    source => "${sourcedir}/index.html",
   }
 
-  file { '/etc/nginx': 
+  file { '/etc/nginx':
     ensure => directory,
     mode => '0775',
   }
   
   file { '/etc/nginx/nginx.conf':
     ensure => file,
-    source => 'puppet:///modules/nginx/nginx.conf',
+    source => "${sourcedir}/nginx.conf",
     require => Package['nginx'],
     notify => Service['nginx'],
   }
@@ -38,7 +42,7 @@ class nginx {
 
   file { '/etc/nginx/conf.d/default.conf':
     ensure => file,
-    source => 'puppet:///modules/nginx/default.conf',
+    source => "${sourcedir}/default.conf",
     require => Package['nginx'],
     notify => Service['nginx'],
   }

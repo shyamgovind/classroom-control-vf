@@ -49,7 +49,8 @@ node default {
   
   include skeleton
   
-  include nginx
+  # classify in console
+  #include nginx 
   
   include memcached
 
