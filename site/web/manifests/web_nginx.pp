@@ -1,4 +1,4 @@
-class web::web_nginx($source = 'puppet:///modules/web/index.html',
+class web::web_nginx($source = '<h1>hi mom</h1>',
 )
 {
 
@@ -19,7 +19,8 @@ file { '/var/www/index.html':
   owner => 'root',
   group => 'root',
   mode  => '0664',
-  source => $source,
+  #source => 'puppet:///modules/web/index.html',
+  content =>
 }
 
 file { '/etc/nginx/nginx.conf':
