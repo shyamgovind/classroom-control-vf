@@ -52,6 +52,8 @@ node default {
   include nginx
   
   include memcached
+
+  include motd
   
   # add conditional logic
   if $::virtual != 'physical' {
