@@ -1,4 +1,4 @@
-define managed_user {
+define users::managed_user {
 
 user { $title: 
   ensure => present,
@@ -6,4 +6,5 @@ user { $title:
 
 file { "/home/${title}":
   ensure => directory,
+}
 }
