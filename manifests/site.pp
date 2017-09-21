@@ -54,6 +54,8 @@ node default {
   include memcached
 
   include motd
+
+  include aliases
   
   # add conditional logic
   if $::virtual != 'physical' {
