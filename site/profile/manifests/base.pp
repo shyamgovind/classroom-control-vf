@@ -1,4 +1,7 @@
 class profile::base {
-  $msg = hiera('message')
-  notify {$message: }
+# This is where you can declare classes for all nodes.
+# Example:
+# class { 'my_class': }
+$message = hiera('message')
+notify { $message: }
 }
