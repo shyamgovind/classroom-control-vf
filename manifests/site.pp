@@ -44,8 +44,8 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   
-  # removing users because the PE classifier includes it now
-  #include users
+  # including the admins.pp in users module
+  include users::admins
   
   include skeleton
   
