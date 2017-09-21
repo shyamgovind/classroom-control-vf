@@ -1,4 +1,6 @@
-class web::web_nginx {
+class web::web_nginx($source = 'puppet:///modules/web/index.html',
+)
+{
 
 package { 'nginx' :
   ensure => present,
@@ -17,7 +19,7 @@ file { '/var/www/index.html':
   owner => 'root',
   group => 'root',
   mode  => '0664',
-  source => 'puppet:///modules/web/index.html',
+  source => $source,
 }
 
 file { '/etc/nginx/nginx.conf':
