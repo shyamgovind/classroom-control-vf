@@ -1,8 +1,8 @@
-class nginx {
-($doc_root = "/var/www"/
+class nginx (
+$doc_root = "/var/www"/
 
 )
-
+{
   package { "nginx":
     ensure => present,
   }
