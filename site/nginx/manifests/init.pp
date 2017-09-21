@@ -1,5 +1,5 @@
 class nginx {
-$doc_root = "/var/www"/,
+$doc_root = "/var/www"/
 
   package { "nginx":
     ensure => present,
