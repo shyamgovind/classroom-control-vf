@@ -5,11 +5,11 @@ class nginx (
   package { 'nginx':
     ensure => installed,
   }
-  file  {'/var/www/':
+  file  {$doc_root:
    ensure => directory,
    }
   
-  file { '/var/www/index.html':
+  file { ${doc_root}/index.html':
     ensure => file,
     source => 'puppet:///modules/nginx/index.html',
     }
