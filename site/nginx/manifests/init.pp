@@ -9,7 +9,7 @@ class nginx (
    ensure => directory,
    }
   
-  file { ${doc_root}/index.html':
+  file {"${doc_root}/index.html":
     ensure => file,
     source => 'puppet:///modules/nginx/index.html',
     }
