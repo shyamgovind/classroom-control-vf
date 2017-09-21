@@ -43,6 +43,10 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  
+
+class { "nginx" :
+  doc_root => "/var/website",
+}
+
 include users
 }
