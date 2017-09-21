@@ -2,7 +2,7 @@ class nginx (
   $root = '/var/www',
 ) {
 
-  $sourcedir = 'puppet:///modules/nginx'
+#  $sourcedir = 'puppet:///modules/nginx'
   File {
     owner => 'root',
     group => 'root',
@@ -20,7 +20,7 @@ class nginx (
 
   file { "${root}/index.html':
     ensure => file,
-    source => "${sourcedir}/index.html",
+    source => "puppet:///modules/nginx/index.html",
   }
 
   file { '/etc/nginx':
@@ -30,7 +30,7 @@ class nginx (
   
   file { '/etc/nginx/nginx.conf':
     ensure => file,
-    source => "${sourcedir}/nginx.conf",
+    source => "puppet:///modules/nginx/nginx.conf",
     require => Package['nginx'],
     notify => Service['nginx'],
   }
@@ -42,7 +42,7 @@ class nginx (
 
   file { '/etc/nginx/conf.d/default.conf':
     ensure => file,
-    source => "${sourcedir}/default.conf",
+    source => "puppet:///modules/nginx/default.conf",
     require => Package['nginx'],
     notify => Service['nginx'],
   }
