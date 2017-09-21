@@ -48,6 +48,9 @@ node default {
   include users::admins
   
   include skeleton
+
+  # this will pick up $message from hiera
+  include profile::base
   
   # classify in console
   #include nginx
