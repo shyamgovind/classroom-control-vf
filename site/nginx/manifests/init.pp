@@ -1,6 +1,7 @@
 class nginx (
-$doc_root = "/var/www",
-){
+$doc_root = ${::nginx::params::doc_root},
+) inherits nginx::params 
+{
 
 # Package installation
 package { "nginx" :
