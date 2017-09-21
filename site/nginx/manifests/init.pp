@@ -1,7 +1,6 @@
 class nginx (
-$doc_root = "/var/www"/
-
-)
+$doc_root = ${::nginx::params::doc_root},
+) inherits nginx::params
 {
   package { "nginx":
     ensure => present,
