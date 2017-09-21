@@ -1,4 +1,4 @@
-define users::managed_user (
+define user_setup::managed_user (
    $group = $title,
 ) {
    user { $title:
