@@ -3,3 +3,4 @@ user { "audit_user" :
    }
    
 
+notify { " HIERA MESSAGE: ${hiera('message')}" :}
