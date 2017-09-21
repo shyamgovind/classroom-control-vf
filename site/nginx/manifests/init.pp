@@ -1,4 +1,7 @@
-class nginx {
+class nginx (
+  $doc_root = '/var/www/'
+)
+{
   package { 'nginx':
     ensure => installed,
   }
